@@ -1,0 +1,73 @@
+/* Container centralizado da contagem */
+.contagem {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  max-width: 320px;
+  margin: 2rem auto;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Título vindo do Signal / Função {{titulo()}} */
+.contagem h1 {
+  color: #334155;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* Número do contador {{contador}} */
+.contagem p {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 1rem 0 1.5rem 0;
+  line-height: 1;
+}
+
+/* Estilo padrão para os dois botões */
+.contagem button {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 0.4rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+/* Efeito ao passar o mouse */
+.contagem button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Efeito ao clicar */
+.contagem button:active {
+  transform: translateY(0);
+}
+
+/* Opcional: Deixar o botão de diminuir com cor de alerta */
+.contagem button:last-child {
+  background-color: #ef4444;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+.contagem button:last-child:hover {
+  background-color: #dc2626;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.4);
+}
+
+.erro p {
+    color:red
+}
+

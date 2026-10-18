@@ -1,0 +1,17 @@
+<div class="cabecalho">
+    <button (click)="alternarMenu()" class="btn-menu">
+        ☰ Menu
+    </button>
+    
+    <p>{{titulo()}}</p>
+    <p> Gabriel</p>
+</div>
+<div>
+    @if (menuAberto){
+        <div class="caixa-menu">
+            <button routerLink="/" (click)="alternarMenu()">Home</button>
+            <button routerLink="/contador" (click)="alternarMenu()">Contador</button>
+            <button routerLink="/tarefas" (click)="alternarMenu()">Tarefas</button>
+        </div>
+    }
+</div>

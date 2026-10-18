@@ -1,0 +1,17 @@
+<div class="contagem">
+    <h1>{{titulo()}}</h1>
+    <p>{{contador}}</p>
+    <button (click)="aumentar()">+</button>
+    <button (click)="diminuir()">-</button>
+    
+    <div>
+        <div [class.erro]="contador < 0">  <!--Isso aqui é uma condição pra usar no CSS. "Se a condição for verdadeira, aplica a classe erro". E se tratando de CSS usamos os colchetes[]-->
+            @if (contador <0){
+                <p>Inválido</p>
+            }
+            @else {<p> -</p>}
+        </div>
+    
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+<app-cabecalho titulo="Tarefas"/>
+
+<main>
+    <h1>Minhas Tarefas</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Prazo</th>
+                <th>Concluído</th>
+            </tr>
+        </thead>
+    
+    <tbody>
+
+    @for(item of minhasTarefas; track $index) {  <!-- Esse for faz com que cada item do vetor criado seja renderizado através de uma tag que eu vou escolher-->
+       
+        <tr [style.backgroundColor] = "item.concluido == true? 'green' : 'white'">
+            <td>{{item.titulo}}</td>
+            <td>{{item.descricao}}</td>
+            <td>{{item.prazo}}</td>
+            <td>{{item.concluido}}</td>
+            
+        </tr>
+                                  <!-- Ele diz: "para cada item do vetor minhas Tarefas..."o track index é pra indicar que tem um identificador pra cada linha, nesse caso, o identificador é a propria posição do vetor-->
+    }
+</tbody>
+</table>
+</main>
+
+<button routerLink="/"> Voltar para HOME</button>
