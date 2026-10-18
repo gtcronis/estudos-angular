@@ -1,0 +1,10 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    background-color: darkslategray;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:white;
+    padding: 10px;
+
+}
+
