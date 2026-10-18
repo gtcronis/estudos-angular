@@ -1,0 +1,84 @@
+<div class="container">
+  <h1>Tutorial Prático de Angular</h1>
+
+  <!-- Seção 1 -->
+  <section class="card">
+    <h2>1. Instalação do Ambiente</h2>
+    <p>Instale a interface de linha de comando do Angular na sua máquina (processo feito apenas uma vez):</p>
+    <pre><code>npm install -g @angular/cli</code></pre>
+  </section>
+
+  <!-- Seção 2 -->
+  <section class="card">
+    <h2>2. Criar e Rodar um Projeto</h2>
+    <ul>
+      <li>
+        <strong>Criar a estrutura:</strong> Navegue até a pasta desejada no terminal e execute:
+        <pre><code>ng new nome-do-projeto</code></pre>
+        <em>(Selecione <strong>CSS</strong> como formato de estilo e <strong>No</strong> para Server-Side Rendering)</em>
+      </li>
+      <li>
+        <strong>Acessar a pasta e subir o servidor:</strong>
+        <pre><code>cd nome-do-projeto
+npm start</code></pre>
+        <em>(Acesse <code>http://localhost:4200/</code> no navegador para visualização do projeto em execução)</em>
+      </li>
+      <li>
+        <strong>Atenção ao <code>app.component.html</code>:</strong> Ao limpar o código inicial do arquivo principal, <strong>nunca remova</strong> a tag <code>&lt;router-outlet&gt;&lt;/router-outlet&gt;</code>. Ela é a "janela" responsável por exibir as telas conforme você navega entre as rotas.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Seção 3 -->
+  <section class="card">
+    <h2>3. Criar Páginas (Componentes)</h2>
+    <p>Para criar uma nova tela no projeto (como a página de disciplinas):</p>
+    <pre><code>ng g c pages/disciplinas</code></pre>
+    <p><em>(Esse comando gera automaticamente a pasta do componente contendo seus arquivos de estrutura, estilo e lógica)</em></p>
+  </section>
+
+  <!-- Seção 4 -->
+  <section class="card">
+    <h2>4. Navegação de Páginas (Rotas)</h2>
+    <ul>
+      <li>
+        <strong>Configurar o <code>app.routes.ts</code>:</strong> Registre o caminho da URL e o componente correspondente:
+        <pre><code>import &#123; Routes &#125; from '@angular/router';
+import &#123; DisciplinasComponent &#125; from './pages/disciplinas/disciplinas.component';
+
+export const routes: Routes = [
+  &#123; path: 'disciplinas', component: DisciplinasComponent &#125;
+];</code></pre>
+      </li>
+      <li>
+        <strong>Link no HTML:</strong> Use a tag <code>&lt;a routerLink="/disciplinas"&gt;</code> em vez do <code>href</code> do HTML puro para trocar de tela sem recarregar o navegador.
+      </li>
+      <li>
+        <strong>Importação no <code>.ts</code>:</strong> Importe a tag no arquivo TypeScript da página para o link funcionar:
+        <pre><code>import &#123; Component &#125; from '@angular/core';
+import &#123; RouterLink &#125; from '@angular/router';
+
+@Component(&#123;
+  selector: 'app-disciplinas',
+  standalone: true,
+  imports: [RouterLink],
+  templateUrl: './disciplinas.component.html',
+  styleUrl: './disciplinas.component.css'
+&#125;)
+export class DisciplinasComponent &#123;&#125;</code></pre>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Seção 5 -->
+  <section class="card">
+    <h2>5. O Papel de Cada Arquivo (.html, .css e .ts)</h2>
+    <ul>
+      <li><strong>.html (Estrutura):</strong> Define o conteúdo e a semântica visual da página (títulos, tabelas, caixas <code>&lt;div&gt;</code>, links e botões).</li>
+      <li><strong>.css (Estilo):</strong> Cuida da apresentação e do visual (alinhamentos, cores de fundo, sombras, bordas e responsividade).</li>
+      <li><strong>.ts (Lógica):</strong> O código TypeScript onde ficam as variáveis, funções, buscas em APIs e as importações necessárias do Angular (como a própria tag <code>RouterLink</code>).</li>
+    </ul>
+  </section>
+
+  <a routerLink="/" class="btn-voltar">← Voltar para a Home</a>
+</div>
